@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>ENetSharpLeague</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>League Sandbox, James F. Bellinger, Lee Salzman</authors>
     <owners>League Sandbox</owners>
     <licenseUrl>https://raw.githubusercontent.com/LeagueSandbox/ENetSharpLeague/master/LICENSE</licenseUrl>
