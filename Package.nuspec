@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ENetSharpLeague</id>
+    <version>1.0.0</version>
+    <authors>League Sandbox, James F. Bellinger, Lee Salzman</authors>
+    <owners>League Sandbox</owners>
+    <licenseUrl>https://raw.githubusercontent.com/LeagueSandbox/ENetSharpLeague/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/LeagueSandbox/ENetSharpLeague</projectUrl>
+    <iconUrl>http://i.imgur.com/xJ0d1t2.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>League of Legends 4.20 Compatible Version of ENet and ENetCS</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>ENet Networking UDP LeagueSandbox</tags>
+    <references>
+        <reference file="ENetCS.dll" />
+    </references>
+  </metadata>
+  <files>
+    <file src="bin/ENetCS.dll" target="lib/net461/ENetCS.dll" />
+    <file src="bin/ENet.dll" target="lib/net461/ENet.dll" />
+  </files>
+</package>

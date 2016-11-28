@@ -139,3 +139,6 @@ UpgradeLog*.XML
 *.exe
 *.out
 *.app
+
+# Nuget Package
+*.nupkg
