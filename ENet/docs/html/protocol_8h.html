@@ -113,7 +113,7 @@ Enumerations</h2></td></tr>
 &nbsp;&nbsp;<b>ENET_PROTOCOL_MAXIMUM_WINDOW_SIZE</b> =  32768, 
 <b>ENET_PROTOCOL_MINIMUM_CHANNEL_COUNT</b> =  1, 
 <b>ENET_PROTOCOL_MAXIMUM_CHANNEL_COUNT</b> =  255, 
-<b>ENET_PROTOCOL_MAXIMUM_PEER_ID</b> =  0xFFF
+<b>ENET_PROTOCOL_MAXIMUM_PEER_ID</b> =  0x7FFF
 <br/>
  }</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><b>_ENetProtocolCommand</b> { <br/>
@@ -136,21 +136,15 @@ Enumerations</h2></td></tr>
 <b>ENET_PROTOCOL_COMMAND_MASK</b> =  0x0F
 <br/>
  }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><b>_ENetProtocolFlag</b> { <br/>
-&nbsp;&nbsp;<b>ENET_PROTOCOL_COMMAND_FLAG_ACKNOWLEDGE</b> =  (1 &lt;&lt; 7), 
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><b>_ENetProtocolFlag</b> { <b>ENET_PROTOCOL_COMMAND_FLAG_ACKNOWLEDGE</b> =  (1 &lt;&lt; 7), 
 <b>ENET_PROTOCOL_COMMAND_FLAG_UNSEQUENCED</b> =  (1 &lt;&lt; 6), 
-<b>ENET_PROTOCOL_HEADER_FLAG_COMPRESSED</b> =  (1 &lt;&lt; 14), 
 <b>ENET_PROTOCOL_HEADER_FLAG_SENT_TIME</b> =  (1 &lt;&lt; 15), 
-<br/>
-&nbsp;&nbsp;<b>ENET_PROTOCOL_HEADER_FLAG_MASK</b> =  ENET_PROTOCOL_HEADER_FLAG_COMPRESSED | ENET_PROTOCOL_HEADER_FLAG_SENT_TIME, 
-<b>ENET_PROTOCOL_HEADER_SESSION_MASK</b> =  (3 &lt;&lt; 12), 
-<b>ENET_PROTOCOL_HEADER_SESSION_SHIFT</b> =  12
-<br/>
+<b>ENET_PROTOCOL_HEADER_FLAG_MASK</b> =  0x8000
  }</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Feb 9 2011 21:31:05 for enet by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue May 31 2011 03:26:31 for enet by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

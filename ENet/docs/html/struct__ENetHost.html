@@ -56,8 +56,6 @@ ENetSocket&nbsp;</td><td class="memItemRight" valign="bottom"><b>socket</b></td>
 <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>bandwidthThrottleEpoch</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78784ad8e214b097c0e11c26dfea0c81"></a><!-- doxytag: member="_ENetHost::mtu" ref="a78784ad8e214b097c0e11c26dfea0c81" args="" -->
 <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>mtu</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad530be58071425c362355a094d012b6f"></a><!-- doxytag: member="_ENetHost::randomSeed" ref="ad530be58071425c362355a094d012b6f" args="" -->
-<a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>randomSeed</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab145ff71d5a8210a17e0d6bde4e0ffac"></a><!-- doxytag: member="_ENetHost::recalculateBandwidthLimits" ref="ab145ff71d5a8210a17e0d6bde4e0ffac" args="" -->
 int&nbsp;</td><td class="memItemRight" valign="bottom"><b>recalculateBandwidthLimits</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afe5102e5cb5df101a763806f50a20ca5"></a><!-- doxytag: member="_ENetHost::peers" ref="afe5102e5cb5df101a763806f50a20ca5" args="" -->
@@ -88,16 +86,11 @@ size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>commandCount</b></t
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c57ae01770e2fd80b405647ae8db1f8"></a><!-- doxytag: member="_ENetHost::bufferCount" ref="a0c57ae01770e2fd80b405647ae8db1f8" args="" -->
 size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>bufferCount</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8540e8bb32c1af0099791f86a06b6b69"></a><!-- doxytag: member="_ENetHost::checksum" ref="a8540e8bb32c1af0099791f86a06b6b69" args="" -->
-ENetChecksumCallback&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__ENetHost.html#a8540e8bb32c1af0099791f86a06b6b69">checksum</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">callback the user can set to enable packet checksums for this host <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54eed34e15bb9d0d110cd0649a229c90"></a><!-- doxytag: member="_ENetHost::compressor" ref="a54eed34e15bb9d0d110cd0649a229c90" args="" -->
-<a class="el" href="struct__ENetCompressor.html">ENetCompressor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>compressor</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada16be25058f0410d15bbd6c1156735d"></a><!-- doxytag: member="_ENetHost::packetData" ref="ada16be25058f0410d15bbd6c1156735d" args="[2][ENET_PROTOCOL_MAXIMUM_MTU]" -->
-<a class="el" href="types_8h.html#a34ce80c65abc6389fe0121a83d757f07">enet_uint8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>packetData</b> [2][ENET_PROTOCOL_MAXIMUM_MTU]</td></tr>
+ENetChecksumCallback&nbsp;</td><td class="memItemRight" valign="bottom"><b>checksum</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2dff34c33a7af14a3bd9f03301473c46"></a><!-- doxytag: member="_ENetHost::receivedAddress" ref="a2dff34c33a7af14a3bd9f03301473c46" args="" -->
 <a class="el" href="struct__ENetAddress.html">ENetAddress</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>receivedAddress</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6fc3f15be64a2fe224a7dd13c22d870"></a><!-- doxytag: member="_ENetHost::receivedData" ref="ab6fc3f15be64a2fe224a7dd13c22d870" args="" -->
-<a class="el" href="types_8h.html#a34ce80c65abc6389fe0121a83d757f07">enet_uint8</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><b>receivedData</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe3d61836fb9313e538e3a379b2d6a48"></a><!-- doxytag: member="_ENetHost::receivedData" ref="abe3d61836fb9313e538e3a379b2d6a48" args="[ENET_PROTOCOL_MAXIMUM_MTU]" -->
+<a class="el" href="types_8h.html#a34ce80c65abc6389fe0121a83d757f07">enet_uint8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>receivedData</b> [ENET_PROTOCOL_MAXIMUM_MTU]</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa8f1545462ceede8dd91c0a7bd538ca"></a><!-- doxytag: member="_ENetHost::receivedDataLength" ref="afa8f1545462ceede8dd91c0a7bd538ca" args="" -->
 size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>receivedDataLength</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a689cd80fdcebebde7a23b8d90ce256ad"></a><!-- doxytag: member="_ENetHost::totalSentData" ref="a689cd80fdcebebde7a23b8d90ce256ad" args="" -->
@@ -114,12 +107,12 @@ size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>receivedDataLength<
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">total UDP packets received, user should reset to 0 as needed to prevent overflow <br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>No fields should be modified unless otherwise stated.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__host.html#ga5567a95d7a45521dc9cba93a9066c940" title="Creates a host for communicating to peers.">enet_host_create()</a> </dd>
+<p>No fields should be modified.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__host.html#ga929df1baa1662e1eb0ae89af9ee3b339" title="Creates a host for communicating to peers.">enet_host_create()</a> </dd>
 <dd>
 <a class="el" href="group__host.html#gacec1e9a0b528c1f9ce30544d2d5b5b79" title="Destroys the host and all resources associated with it.">enet_host_destroy()</a> </dd>
 <dd>
-<a class="el" href="group__host.html#ga23b3ac206326b84f42fa91673f12fca9" title="Initiates a connection to a foreign host.">enet_host_connect()</a> </dd>
+<a class="el" href="group__host.html#ga04f234142512c08dd86a22b05020bd88" title="Initiates a connection to a foreign host.">enet_host_connect()</a> </dd>
 <dd>
 <a class="el" href="group__host.html#ga6ba501b3ee576e5578c8e6d1694ebd49" title="Waits for events on the host specified and shuttles packets between the host and its peers...">enet_host_service()</a> </dd>
 <dd>
@@ -127,9 +120,7 @@ size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>receivedDataLength<
 <dd>
 <a class="el" href="group__host.html#ga5190a63f78eb0c15bd96cda44bf423c6" title="Queues a packet to be sent to all peers associated with the host.">enet_host_broadcast()</a> </dd>
 <dd>
-<a class="el" href="group__host.html#gae9e23efdfc718dedaa349891dddf529b" title="Sets the packet compressor the host should use to compress and decompress packets.">enet_host_compress()</a> </dd>
-<dd>
-<a class="el" href="group__host.html#ga444b74e7b70d97e2abd02328419be3f4" title="Sets the packet compressor the host should use to the default range coder.">enet_host_compress_with_range_coder()</a> </dd>
+enet_host_checksum() </dd>
 <dd>
 <a class="el" href="group__host.html#gaa3c04d1a1a41f46a2db274f29a8d0ffd" title="Limits the maximum allowed channels of future incoming connections.">enet_host_channel_limit()</a> </dd>
 <dd>
@@ -140,7 +131,7 @@ enet_host_bandwidth_throttle() </dd></dl>
 <li><a class="el" href="enet_8h_source.html">enet.h</a></li>
 </ul>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Feb 9 2011 21:31:05 for enet by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue May 31 2011 03:26:31 for enet by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

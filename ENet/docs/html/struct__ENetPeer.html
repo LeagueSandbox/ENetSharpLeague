@@ -49,12 +49,8 @@ struct <a class="el" href="struct__ENetHost.html">_ENetHost</a> *&nbsp;</td><td 
 <a class="el" href="types_8h.html#a245102585fdf31bdf208639ef47bec5d">enet_uint16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>outgoingPeerID</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5127dcc4df9d3eca98c747d6ff93b592"></a><!-- doxytag: member="_ENetPeer::incomingPeerID" ref="a5127dcc4df9d3eca98c747d6ff93b592" args="" -->
 <a class="el" href="types_8h.html#a245102585fdf31bdf208639ef47bec5d">enet_uint16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>incomingPeerID</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afdb315641e57fb531b7db488562d3ac8"></a><!-- doxytag: member="_ENetPeer::connectID" ref="afdb315641e57fb531b7db488562d3ac8" args="" -->
-<a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>connectID</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a68c95605e45fec3819f1a1533a976791"></a><!-- doxytag: member="_ENetPeer::outgoingSessionID" ref="a68c95605e45fec3819f1a1533a976791" args="" -->
-<a class="el" href="types_8h.html#a34ce80c65abc6389fe0121a83d757f07">enet_uint8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>outgoingSessionID</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87cb2d8aefb81d9972d57fd480222f0d"></a><!-- doxytag: member="_ENetPeer::incomingSessionID" ref="a87cb2d8aefb81d9972d57fd480222f0d" args="" -->
-<a class="el" href="types_8h.html#a34ce80c65abc6389fe0121a83d757f07">enet_uint8</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>incomingSessionID</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02fa502365a612fad69847b25fb489ef"></a><!-- doxytag: member="_ENetPeer::sessionID" ref="a02fa502365a612fad69847b25fb489ef" args="" -->
+<a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>sessionID</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a409cfc46d0ccd860552650369704aabe"></a><!-- doxytag: member="_ENetPeer::address" ref="a409cfc46d0ccd860552650369704aabe" args="" -->
 <a class="el" href="struct__ENetAddress.html">ENetAddress</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__ENetPeer.html#a409cfc46d0ccd860552650369704aabe">address</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Internet address of the peer. <br/></td></tr>
@@ -128,8 +124,8 @@ size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">mean round trip time (RTT), in milliseconds, between sending a reliable packet and receiving its acknowledgement <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2176c695ef652e93a192bd5b20e0261e"></a><!-- doxytag: member="_ENetPeer::roundTripTimeVariance" ref="a2176c695ef652e93a192bd5b20e0261e" args="" -->
 <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>roundTripTimeVariance</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0161d50a5da6c35f012f6a6be6baab1"></a><!-- doxytag: member="_ENetPeer::mtu" ref="af0161d50a5da6c35f012f6a6be6baab1" args="" -->
-<a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>mtu</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac10aa0901db54b0b07bdc46a203b53a0"></a><!-- doxytag: member="_ENetPeer::mtu" ref="ac10aa0901db54b0b07bdc46a203b53a0" args="" -->
+<a class="el" href="types_8h.html#a245102585fdf31bdf208639ef47bec5d">enet_uint16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>mtu</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a9224741466653a1c561b1ca8f80352"></a><!-- doxytag: member="_ENetPeer::windowSize" ref="a9a9224741466653a1c561b1ca8f80352" args="" -->
 <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>windowSize</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd8b21aa40c196f9c81391caa30e81c2"></a><!-- doxytag: member="_ENetPeer::reliableDataInTransit" ref="afd8b21aa40c196f9c81391caa30e81c2" args="" -->
@@ -156,8 +152,8 @@ int&nbsp;</td><td class="memItemRight" valign="bottom"><b>needsDispatch</b></td>
 <a class="el" href="types_8h.html#a245102585fdf31bdf208639ef47bec5d">enet_uint16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>outgoingUnsequencedGroup</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb01d70aad5f6da485c7cbdf08434241"></a><!-- doxytag: member="_ENetPeer::unsequencedWindow" ref="abb01d70aad5f6da485c7cbdf08434241" args="[ENET_PEER_UNSEQUENCED_WINDOW_SIZE/32]" -->
 <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>unsequencedWindow</b> [ENET_PEER_UNSEQUENCED_WINDOW_SIZE/32]</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01249ae04e2f88c195054de8c42ce663"></a><!-- doxytag: member="_ENetPeer::eventData" ref="a01249ae04e2f88c195054de8c42ce663" args="" -->
-<a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>eventData</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a41d01d3e3e262153531e5f6dda7a3e85"></a><!-- doxytag: member="_ENetPeer::disconnectData" ref="a41d01d3e3e262153531e5f6dda7a3e85" args="" -->
+<a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>disconnectData</b></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>No fields should be modified unless otherwise specified. </p>
@@ -165,7 +161,7 @@ int&nbsp;</td><td class="memItemRight" valign="bottom"><b>needsDispatch</b></td>
 <li><a class="el" href="enet_8h_source.html">enet.h</a></li>
 </ul>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Feb 9 2011 21:31:05 for enet by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue May 31 2011 03:26:31 for enet by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

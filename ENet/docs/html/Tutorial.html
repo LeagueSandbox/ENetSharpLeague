@@ -52,7 +52,7 @@ main (<span class="keywordtype">int</span> argc, <span class="keywordtype">char<
 }
 </pre></div><h2><a class="anchor" id="CreateServer"></a>
 Creating an ENet server</h2>
-<p>Servers in ENet are constructed with <a class="el" href="group__host.html#ga5567a95d7a45521dc9cba93a9066c940" title="Creates a host for communicating to peers.">enet_host_create()</a>. You must specify an address on which to receive data and new connections, as well as the maximum allowable numbers of connected peers. You may optionally specify the incoming and outgoing bandwidth of the server in bytes per second so that ENet may try to statically manage bandwidth resources among connected peers in addition to its dynamic throttling algorithm; specifying 0 for these two options will cause ENet to rely entirely upon its dynamic throttling algorithm to manage bandwidth.</p>
+<p>Servers in ENet are constructed with <a class="el" href="group__host.html#ga929df1baa1662e1eb0ae89af9ee3b339" title="Creates a host for communicating to peers.">enet_host_create()</a>. You must specify an address on which to receive data and new connections, as well as the maximum allowable numbers of connected peers. You may optionally specify the incoming and outgoing bandwidth of the server in bytes per second so that ENet may try to statically manage bandwidth resources among connected peers in addition to its dynamic throttling algorithm; specifying 0 for these two options will cause ENet to rely entirely upon its dynamic throttling algorithm to manage bandwidth.</p>
 <p>When done with a host, the host may be destroyed with <a class="el" href="group__host.html#gacec1e9a0b528c1f9ce30544d2d5b5b79" title="Destroys the host and all resources associated with it.">enet_host_destroy()</a>. All connected peers to the host will be reset, and the resources used by the host will be freed.</p>
 <div class="fragment"><pre class="fragment">    <a class="code" href="struct__ENetAddress.html" title="Portable internet address structure.">ENetAddress</a> address;
     <a class="code" href="struct__ENetHost.html" title="An ENet host for communicating with peers.">ENetHost</a> * server;
@@ -65,9 +65,8 @@ Creating an ENet server</h2>
     <span class="comment">/* Bind the server to port 1234. */</span>
     address.port = 1234;
 
-    server = <a class="code" href="group__host.html#ga5567a95d7a45521dc9cba93a9066c940" title="Creates a host for communicating to peers.">enet_host_create</a> (&amp; address <span class="comment">/* the address to bind the server host to */</span>, 
+    server = <a class="code" href="group__host.html#ga929df1baa1662e1eb0ae89af9ee3b339" title="Creates a host for communicating to peers.">enet_host_create</a> (&amp; address <span class="comment">/* the address to bind the server host to */</span>, 
                                  32      <span class="comment">/* allow up to 32 clients and/or outgoing connections */</span>,
-                                  2      <span class="comment">/* allow up to 2 channels to be used, 0 and 1 */</span>,
                                   0      <span class="comment">/* assume any amount of incoming bandwidth */</span>,
                                   0      <span class="comment">/* assume any amount of outgoing bandwidth */</span>);
     <span class="keywordflow">if</span> (server == NULL)
@@ -82,12 +81,11 @@ Creating an ENet server</h2>
     <a class="code" href="group__host.html#gacec1e9a0b528c1f9ce30544d2d5b5b79" title="Destroys the host and all resources associated with it.">enet_host_destroy</a>(server);
 </pre></div><h2><a class="anchor" id="CreateClient"></a>
 Creating an ENet client</h2>
-<p>Clients in ENet are similarly constructed with <a class="el" href="group__host.html#ga5567a95d7a45521dc9cba93a9066c940" title="Creates a host for communicating to peers.">enet_host_create()</a> when no address is specified to bind the host to. Bandwidth may be specified for the client host as in the above example. The peer count controls the maximum number of connections to other server hosts that may be simultaneously open.</p>
+<p>Clients in ENet are similarly constructed with <a class="el" href="group__host.html#ga929df1baa1662e1eb0ae89af9ee3b339" title="Creates a host for communicating to peers.">enet_host_create()</a> when no address is specified to bind the host to. Bandwidth may be specified for the client host as in the above example. The peer count controls the maximum number of connections to other server hosts that may be simultaneously open.</p>
 <div class="fragment"><pre class="fragment">    <a class="code" href="struct__ENetHost.html" title="An ENet host for communicating with peers.">ENetHost</a> * client;
 
-    client = <a class="code" href="group__host.html#ga5567a95d7a45521dc9cba93a9066c940" title="Creates a host for communicating to peers.">enet_host_create</a> (NULL <span class="comment">/* create a client host */</span>,
+    client = <a class="code" href="group__host.html#ga929df1baa1662e1eb0ae89af9ee3b339" title="Creates a host for communicating to peers.">enet_host_create</a> (NULL <span class="comment">/* create a client host */</span>,
                 1 <span class="comment">/* only allow 1 outgoing connection */</span>,
-                2 <span class="comment">/* allow up 2 channels to be used, 0 and 1 */</span>,
                 57600 / 8 <span class="comment">/* 56K modem with 56 Kbps downstream bandwidth */</span>,
                 14400 / 8 <span class="comment">/* 56K modem with 14 Kbps upstream bandwidth */</span>);
 
@@ -213,7 +211,7 @@ Disconnecting an ENet peer</h2>
     ...
 </pre></div><h2><a class="anchor" id="Connecting"></a>
 Connecting to an ENet host</h2>
-<p>A connection to a foreign host is initiated with <a class="el" href="group__host.html#ga23b3ac206326b84f42fa91673f12fca9" title="Initiates a connection to a foreign host.">enet_host_connect()</a>. It accepts the address of a foreign host to connect to, and the number of channels that should be allocated for communication. If N channels are allocated for use, their channel ids will be numbered 0 through N-1. A peer representing the connection attempt is returned, or NULL if there were no available peers over which to initiate the connection. When the connection attempt succeeds, an event of type ENET_EVENT_TYPE_CONNECT will be generated. If the connection attempt times out or otherwise fails, an event of type ENET_EVENT_TYPE_DISCONNECT will be generated.</p>
+<p>A connection to a foreign host is initiated with <a class="el" href="group__host.html#ga04f234142512c08dd86a22b05020bd88" title="Initiates a connection to a foreign host.">enet_host_connect()</a>. It accepts the address of a foreign host to connect to, and the number of channels that should be allocated for communication. If N channels are allocated for use, their channel ids will be numbered 0 through N-1. A peer representing the connection attempt is returned, or NULL if there were no available peers over which to initiate the connection. When the connection attempt succeeds, an event of type ENET_EVENT_TYPE_CONNECT will be generated. If the connection attempt times out or otherwise fails, an event of type ENET_EVENT_TYPE_DISCONNECT will be generated.</p>
 <div class="fragment"><pre class="fragment">    <a class="code" href="struct__ENetAddress.html" title="Portable internet address structure.">ENetAddress</a> address;
     <a class="code" href="struct__ENetEvent.html" title="An ENet event as returned by enet_host_service().">ENetEvent</a> event;
     <a class="code" href="struct__ENetPeer.html" title="An ENet peer which data packets may be sent or received from.">ENetPeer</a> *peer;
@@ -223,7 +221,7 @@ Connecting to an ENet host</h2>
     address.port = 1234;
 
     <span class="comment">/* Initiate the connection, allocating the two channels 0 and 1. */</span>
-    peer = <a class="code" href="group__host.html#ga23b3ac206326b84f42fa91673f12fca9" title="Initiates a connection to a foreign host.">enet_host_connect</a> (client, &amp; address, 2, 0);    
+    peer = <a class="code" href="group__host.html#ga04f234142512c08dd86a22b05020bd88" title="Initiates a connection to a foreign host.">enet_host_connect</a> (client, &amp; address, 2);    
     
     <span class="keywordflow">if</span> (peer == NULL)
     {
@@ -254,7 +252,7 @@ Connecting to an ENet host</h2>
     ...
     ...
 </pre></div> </div>
-<hr class="footer"/><address class="footer"><small>Generated on Wed Feb 9 2011 21:31:05 for enet by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue May 31 2011 03:26:31 for enet by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

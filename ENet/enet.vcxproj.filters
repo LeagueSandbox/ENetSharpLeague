@@ -1,47 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="include">
-      <UniqueIdentifier>{41214c2c-a29a-4461-b61b-b755fdaf84f4}</UniqueIdentifier>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{65544c01-c3a7-4ecb-a737-3ab37e1fb9b5}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
-    <Filter Include="include\enet">
-      <UniqueIdentifier>{02f14812-56d0-48e2-902b-f053f76dde0e}</UniqueIdentifier>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{fa12720f-f1ba-4d1a-9f6c-dd4a8cd99a7c}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\enet\callbacks.h">
-      <Filter>include\enet</Filter>
-    </ClInclude>
+    <ClCompile Include="host.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="callbacks.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="packet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="peer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="protocol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="unix.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="win32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="include\enet\enet.h">
-      <Filter>include\enet</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\enet\list.h">
-      <Filter>include\enet</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\enet\callbacks.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\enet\protocol.h">
-      <Filter>include\enet</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\enet\time.h">
-      <Filter>include\enet</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\enet\types.h">
-      <Filter>include\enet</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\enet\unix.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\enet\utility.h">
-      <Filter>include\enet</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\enet\win32.h">
-      <Filter>include\enet</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="callbacks.c" />
-    <ClCompile Include="compress.c" />
-    <ClCompile Include="host.c" />
-    <ClCompile Include="list.c" />
-    <ClCompile Include="packet.c" />
-    <ClCompile Include="peer.c" />
-    <ClCompile Include="protocol.c" />
-    <ClCompile Include="win32.c" />
   </ItemGroup>
 </Project>
