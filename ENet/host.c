@@ -211,7 +211,7 @@ enet_host_connect (ENetHost * host, const ENetAddress * address, size_t channelC
     command.connect.packetThrottleDeceleration = ENET_HOST_TO_NET_32 (currentPeer -> packetThrottleDeceleration);
     command.connect.sessionID = currentPeer -> sessionID;
     
-    enet_peer_queue_outgoing_command (currentPeer, & command, NULL, 0, 0);
+    //enet_peer_queue_outgoing_command (currentPeer, & command, NULL, 0, 0);
 
     return currentPeer;
 }

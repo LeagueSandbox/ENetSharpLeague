@@ -12,7 +12,7 @@ extern "C"
 
 #include <stdlib.h>
 
-#ifdef WIN32
+#if defined(WIN32) || defined(_WIN32)
 #include "enet/win32.h"
 #else
 #include "enet/unix.h"
@@ -201,7 +201,7 @@ enum
    ENET_PEER_WINDOW_SIZE_SCALE            = 64 * 1024,
    ENET_PEER_TIMEOUT_LIMIT                = 32,
    ENET_PEER_TIMEOUT_MINIMUM              = 5000,
-   ENET_PEER_TIMEOUT_MAXIMUM              = 30000,
+   ENET_PEER_TIMEOUT_MAXIMUM              = 10000,
    ENET_PEER_PING_INTERVAL                = 500,
    ENET_PEER_UNSEQUENCED_WINDOWS          = 64,
    ENET_PEER_UNSEQUENCED_WINDOW_SIZE      = 1024,
@@ -232,8 +232,8 @@ typedef struct _ENetPeer
 { 
    ENetListNode  dispatchList;
    struct _ENetHost * host;
-   enet_uint16   outgoingPeerID;
-   enet_uint16   incomingPeerID;
+   enet_uint8   outgoingPeerID;
+   enet_uint8   incomingPeerID;
    enet_uint32   sessionID;
    ENetAddress   address;            /**< Internet address of the peer */
    void *        data;               /**< Application private data, may be freely modified */
@@ -319,7 +319,7 @@ typedef struct _ENetHost
    ENetList             dispatchQueue;
    int                  continueSending;
    size_t               packetSize;
-   enet_uint16          headerFlags;
+   enet_uint8          headerFlags;
    ENetProtocol         commands [ENET_PROTOCOL_MAXIMUM_PACKET_COMMANDS];
    size_t               commandCount;
    ENetBuffer           buffers [ENET_BUFFER_MAXIMUM];

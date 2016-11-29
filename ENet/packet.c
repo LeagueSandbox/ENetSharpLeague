@@ -54,8 +54,10 @@ enet_packet_destroy (ENetPacket * packet)
 {
     if (packet -> freeCallback != NULL)
       (* packet -> freeCallback) (packet);
-    if (! (packet -> flags & ENET_PACKET_FLAG_NO_ALLOCATE))
+    
+	if (! (packet -> flags & ENET_PACKET_FLAG_NO_ALLOCATE))
       enet_free (packet -> data);
+
     enet_free (packet);
 }
 
