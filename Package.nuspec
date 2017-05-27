@@ -19,6 +19,6 @@
   </metadata>
   <files>
     <file src="Release/ENetCS.dll" target="lib/net461/ENetCS.dll" />
-    <file src="Release/ENet.dll" target="lib/native/ENet.dll" />
+    <file src="Release/libenet.dll" target="lib/native/libenet.dll" />
   </files>
 </package>
