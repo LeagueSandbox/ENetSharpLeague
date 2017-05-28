@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-project(libenet)
+project(enet)
 set(CMAKE_BUILD_TYPE Release)
 
 # The "configure" step.
@@ -64,7 +64,7 @@ endif()
  
 include_directories(${PROJECT_SOURCE_DIR}/include)
  
-add_library(libenet SHARED
+add_library(enet SHARED
         callbacks.c
         host.c
         list.c
