@@ -5,6 +5,8 @@
 #ifndef __ENET_ENET_H__
 #define __ENET_ENET_H__
 
+//#define ENET_DEBUG_PROTOCOL
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -319,7 +321,7 @@ typedef struct _ENetHost
    ENetList             dispatchQueue;
    int                  continueSending;
    size_t               packetSize;
-   enet_uint8          headerFlags;
+   enet_uint8           headerFlags;
    ENetProtocol         commands [ENET_PROTOCOL_MAXIMUM_PACKET_COMMANDS];
    size_t               commandCount;
    ENetBuffer           buffers [ENET_BUFFER_MAXIMUM];

@@ -47,7 +47,7 @@ typedef enum _ENetProtocolFlag
    ENET_PROTOCOL_HEADER_FLAG_MASK      = 0x80
 } ENetProtocolFlag;
 
-#ifdef _MSC_VER_
+#ifdef _MSC_VER
 #pragma pack(push, 1)
 #define ENET_PACKED
 #elif defined(__GNUC__)
@@ -58,7 +58,8 @@ typedef enum _ENetProtocolFlag
 
 typedef struct _ENetProtocolHeader
 {
-   enet_uint32 checksum;
+   enet_uint32 serverDetailsCRCHash;
+   enet_uint32 hmacKey;
    enet_uint8 peerID;
    enet_uint8 flag;
    enet_uint16 sentTime;
@@ -182,7 +183,8 @@ typedef union _ENetProtocol
    ENetProtocolThrottleConfigure throttleConfigure;
 } ENET_PACKED ENetProtocol;
 
-#ifdef _MSC_VER_
+
+#ifdef _MSC_VER
 #pragma pack(pop)
 #endif
 

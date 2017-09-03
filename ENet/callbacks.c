@@ -10,22 +10,22 @@ static ENetCallbacks callbacks = { malloc, free, rand, abort };
 int
 enet_initialize_with_callbacks (ENetVersion version, const ENetCallbacks * inits)
 {
-   if (inits -> malloc != NULL || inits -> free != NULL)
+   if (inits->malloc != NULL || inits->free != NULL)
    {
-      if (inits -> malloc == NULL || inits -> free == NULL)
+      if (inits->malloc == NULL || inits->free == NULL)
         return -1;
 
-      callbacks.malloc = inits -> malloc;
-      callbacks.free = inits -> free;
+      callbacks.malloc = inits->malloc;
+      callbacks.free = inits->free;
    }
       
-   if (inits -> rand != NULL)
-     callbacks.rand = inits -> rand;
+   if (inits->rand != NULL)
+     callbacks.rand = inits->rand;
 
    if (version >= ENET_VERSION_CREATE (1, 2, 2))
    {
-      if (inits -> no_memory != NULL)
-        callbacks.no_memory = inits -> no_memory;
+      if (inits->no_memory != NULL)
+        callbacks.no_memory = inits->no_memory;
    }
 
    return enet_initialize ();

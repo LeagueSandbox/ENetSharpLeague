@@ -60,6 +60,8 @@ Data Structures</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__ENetChannel.html">_ENetChannel</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__ENetPeer.html">_ENetPeer</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">An ENet peer which data packets may be sent or received from.  <a href="struct__ENetPeer.html#_details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__ENetCompressor.html">_ENetCompressor</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">An ENet packet compressor for compressing UDP packets before socket sends or receives.  <a href="struct__ENetCompressor.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__ENetHost.html">_ENetHost</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">An ENet host for communicating with peers.  <a href="struct__ENetHost.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__ENetEvent.html">_ENetEvent</a></td></tr>
@@ -69,9 +71,9 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7ed937c2db14ba2efb15c6a1626942a"></a><!-- doxytag: member="enet.h::ENET_VERSION_MAJOR" ref="ab7ed937c2db14ba2efb15c6a1626942a" args="" -->
 #define&nbsp;</td><td class="memItemRight" valign="bottom"><b>ENET_VERSION_MAJOR</b>&nbsp;&nbsp;&nbsp;1</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e3fba7774ffbf6f095c7c1c643db823"></a><!-- doxytag: member="enet.h::ENET_VERSION_MINOR" ref="a7e3fba7774ffbf6f095c7c1c643db823" args="" -->
-#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>ENET_VERSION_MINOR</b>&nbsp;&nbsp;&nbsp;2</td></tr>
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>ENET_VERSION_MINOR</b>&nbsp;&nbsp;&nbsp;3</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e08f37772431845fe118f9a87bebda2"></a><!-- doxytag: member="enet.h::ENET_VERSION_PATCH" ref="a7e08f37772431845fe118f9a87bebda2" args="" -->
-#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>ENET_VERSION_PATCH</b>&nbsp;&nbsp;&nbsp;4</td></tr>
+#define&nbsp;</td><td class="memItemRight" valign="bottom"><b>ENET_VERSION_PATCH</b>&nbsp;&nbsp;&nbsp;1</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3ebd57b901e14fa1ff745b0472ea786"></a><!-- doxytag: member="enet.h::ENET_VERSION_CREATE" ref="ab3ebd57b901e14fa1ff745b0472ea786" args="(major, minor, patch)" -->
 #define&nbsp;</td><td class="memItemRight" valign="bottom"><b>ENET_VERSION_CREATE</b>(major, minor, patch)&nbsp;&nbsp;&nbsp;(((major)&lt;&lt;16) | ((minor)&lt;&lt;8) | (patch))</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aefb355eb62b5a7096faf91b3134e9016"></a><!-- doxytag: member="enet.h::ENET_VERSION" ref="aefb355eb62b5a7096faf91b3134e9016" args="" -->
@@ -106,6 +108,9 @@ typedef enum _ENetPeerState&nbsp;</td><td class="memItemRight" valign="bottom"><
 typedef struct <a class="el" href="struct__ENetChannel.html">_ENetChannel</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>ENetChannel</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__ENetPeer.html">_ENetPeer</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="enet_8h.html#ae879b330cb0d2ade08cef4231423eaa7">ENetPeer</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">An ENet peer which data packets may be sent or received from.  <a href="#ae879b330cb0d2ade08cef4231423eaa7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab39c3acb1e98a5d40a2128491db128a"></a><!-- doxytag: member="enet.h::ENetCompressor" ref="aab39c3acb1e98a5d40a2128491db128a" args="" -->
+typedef struct <a class="el" href="struct__ENetCompressor.html">_ENetCompressor</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="enet_8h.html#aab39c3acb1e98a5d40a2128491db128a">ENetCompressor</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">An ENet packet compressor for compressing UDP packets before socket sends or receives. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40a0b9b0c5d219ac1a01e7da58c99ac6"></a><!-- doxytag: member="enet.h::bufferCount" ref="a40a0b9b0c5d219ac1a01e7da58c99ac6" args="" -->
 typedef size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>bufferCount</b></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__ENetHost.html">_ENetHost</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="enet_8h.html#a258d786d5940288970898ac827bf2a68">ENetHost</a></td></tr>
@@ -133,9 +138,9 @@ Enumerations</h2></td></tr>
 &nbsp;&nbsp;<b>ENET_SOCKOPT_REUSEADDR</b> =  5
 <br/>
  }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="enet_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba3d8d24eeb6e426826e88540d7c87d036">ENET_HOST_ANY</a> =  0, 
-<a class="el" href="enet_8h.html#a06fc87d81c62e9abb8790b6e5713c55baf40f3e48e3f87859c06d62023601eb57">ENET_HOST_BROADCAST</a> =  0xFFFFFFFF, 
-<a class="el" href="enet_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba851f798e15c7f68c29a5755ac7d7cce4">ENET_PORT_ANY</a> =  0
+<tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="enet_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a3d8d24eeb6e426826e88540d7c87d036">ENET_HOST_ANY</a> =  0, 
+<a class="el" href="enet_8h.html#adf764cbdea00d65edcd07bb9953ad2b7af40f3e48e3f87859c06d62023601eb57">ENET_HOST_BROADCAST</a> =  0xFFFFFFFF, 
+<a class="el" href="enet_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a851f798e15c7f68c29a5755ac7d7cce4">ENET_PORT_ANY</a> =  0
  }</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="enet_8h.html#a9d1fc0ce6da0a057f18bd8b9c762003d">_ENetPacketFlag</a> { <a class="el" href="enet_8h.html#a9d1fc0ce6da0a057f18bd8b9c762003daab20e7088245ab2ddb7f11dcc9433738">ENET_PACKET_FLAG_RELIABLE</a> =  (1 &lt;&lt; 0), 
 <a class="el" href="enet_8h.html#a9d1fc0ce6da0a057f18bd8b9c762003dad230cc769ef9cc4c7c582b28f9c443fe">ENET_PACKET_FLAG_UNSEQUENCED</a> =  (1 &lt;&lt; 1), 
@@ -203,7 +208,7 @@ Functions</h2></td></tr>
 typedef&nbsp;</td><td class="memItemRight" valign="bottom"><b>void</b> (ENET_CALLBACK *ENetPacketFreeCallback)(struct <a class="el" href="struct__ENetPacket.html">_ENetPacket</a> *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f132d373f37241ccac5dd0a360bdd28"></a><!-- doxytag: member="enet.h::enet_uint32" ref="a8f132d373f37241ccac5dd0a360bdd28" args="(ENET_CALLBACK *ENetChecksumCallback)(const ENetBuffer *buffers" -->
 typedef&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="enet_8h.html#a8f132d373f37241ccac5dd0a360bdd28">enet_uint32</a> (ENET_CALLBACK *ENetChecksumCallback)(const <a class="el" href="structENetBuffer.html">ENetBuffer</a> *buffers</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback that computes the checksum of the data held in buffers [0..bufferCount-1]. <br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Callback that computes the checksum of the data held in buffers[0:bufferCount-1]. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ENET_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__global.html#ga67fa85c46a1dc91f968f25fc0637c897">enet_initialize</a> (void)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initializes ENet globally.  <a href="group__global.html#ga67fa85c46a1dc91f968f25fc0637c897"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ENET_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__global.html#gaef1e7849f3ddde18c6a30f32783c899d">enet_initialize_with_callbacks</a> (ENetVersion version, const <a class="el" href="struct__ENetCallbacks.html">ENetCallbacks</a> *inits)</td></tr>
@@ -251,12 +256,12 @@ ENET_API int&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_socketse
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Attempts to resize the data in the packet to length specified in the dataLength parameter.  <a href="group__Packet.html#ga0aee7f8c7e2d2c4b64f6d68d930155a8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga015ce0307049901852c54dd2def532e2"></a><!-- doxytag: member="enet.h::enet_crc32" ref="ga015ce0307049901852c54dd2def532e2" args="(const ENetBuffer *, size_t)" -->
 <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_crc32</b> (const <a class="el" href="structENetBuffer.html">ENetBuffer</a> *, size_t)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ENET_API <a class="el" href="struct__ENetHost.html">ENetHost</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#ga929df1baa1662e1eb0ae89af9ee3b339">enet_host_create</a> (const <a class="el" href="struct__ENetAddress.html">ENetAddress</a> *, size_t, <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>, <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a host for communicating to peers.  <a href="group__host.html#ga929df1baa1662e1eb0ae89af9ee3b339"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ENET_API <a class="el" href="struct__ENetHost.html">ENetHost</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#ga5567a95d7a45521dc9cba93a9066c940">enet_host_create</a> (const <a class="el" href="struct__ENetAddress.html">ENetAddress</a> *, size_t, size_t, <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>, <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a host for communicating to peers.  <a href="group__host.html#ga5567a95d7a45521dc9cba93a9066c940"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ENET_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#gacec1e9a0b528c1f9ce30544d2d5b5b79">enet_host_destroy</a> (<a class="el" href="struct__ENetHost.html">ENetHost</a> *)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destroys the host and all resources associated with it.  <a href="group__host.html#gacec1e9a0b528c1f9ce30544d2d5b5b79"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">ENET_API <a class="el" href="struct__ENetPeer.html">ENetPeer</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#ga04f234142512c08dd86a22b05020bd88">enet_host_connect</a> (<a class="el" href="struct__ENetHost.html">ENetHost</a> *, const <a class="el" href="struct__ENetAddress.html">ENetAddress</a> *, size_t)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initiates a connection to a foreign host.  <a href="group__host.html#ga04f234142512c08dd86a22b05020bd88"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ENET_API <a class="el" href="struct__ENetPeer.html">ENetPeer</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#ga23b3ac206326b84f42fa91673f12fca9">enet_host_connect</a> (<a class="el" href="struct__ENetHost.html">ENetHost</a> *, const <a class="el" href="struct__ENetAddress.html">ENetAddress</a> *, size_t, <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initiates a connection to a foreign host.  <a href="group__host.html#ga23b3ac206326b84f42fa91673f12fca9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ENET_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#gabf2383e4a5ed864c56a50dc67b901fe9">enet_host_check_events</a> (<a class="el" href="struct__ENetHost.html">ENetHost</a> *, <a class="el" href="struct__ENetEvent.html">ENetEvent</a> *)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks for any queued events on the host and dispatches one if available.  <a href="group__host.html#gabf2383e4a5ed864c56a50dc67b901fe9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ENET_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#ga6ba501b3ee576e5578c8e6d1694ebd49">enet_host_service</a> (<a class="el" href="struct__ENetHost.html">ENetHost</a> *, <a class="el" href="struct__ENetEvent.html">ENetEvent</a> *, <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>)</td></tr>
@@ -265,6 +270,10 @@ ENET_API int&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_socketse
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sends any queued packets on the host specified to its designated peers.  <a href="group__host.html#gac8f53bcdbd540043f87e7d59048559fa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ENET_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#ga5190a63f78eb0c15bd96cda44bf423c6">enet_host_broadcast</a> (<a class="el" href="struct__ENetHost.html">ENetHost</a> *, <a class="el" href="types_8h.html#a34ce80c65abc6389fe0121a83d757f07">enet_uint8</a>, <a class="el" href="struct__ENetPacket.html">ENetPacket</a> *)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Queues a packet to be sent to all peers associated with the host.  <a href="group__host.html#ga5190a63f78eb0c15bd96cda44bf423c6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ENET_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#gae9e23efdfc718dedaa349891dddf529b">enet_host_compress</a> (<a class="el" href="struct__ENetHost.html">ENetHost</a> *, const <a class="el" href="struct__ENetCompressor.html">ENetCompressor</a> *)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the packet compressor the host should use to compress and decompress packets.  <a href="group__host.html#gae9e23efdfc718dedaa349891dddf529b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">ENET_API int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#ga444b74e7b70d97e2abd02328419be3f4">enet_host_compress_with_range_coder</a> (<a class="el" href="struct__ENetHost.html">ENetHost</a> *host)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sets the packet compressor the host should use to the default range coder.  <a href="group__host.html#ga444b74e7b70d97e2abd02328419be3f4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ENET_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#gaa3c04d1a1a41f46a2db274f29a8d0ffd">enet_host_channel_limit</a> (<a class="el" href="struct__ENetHost.html">ENetHost</a> *, size_t)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Limits the maximum allowed channels of future incoming connections.  <a href="group__host.html#gaa3c04d1a1a41f46a2db274f29a8d0ffd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">ENET_API void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__host.html#ga83c5fa02a3ba6ab829856302e54929fe">enet_host_bandwidth_limit</a> (<a class="el" href="struct__ENetHost.html">ENetHost</a> *, <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>, <a class="el" href="types_8h.html#a5273659ca3c664b8550452732e9e4ae3">enet_uint32</a>)</td></tr>
@@ -303,6 +312,14 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_peer_setup_outgo
 void&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_peer_dispatch_incoming_unreliable_commands</b> (<a class="el" href="struct__ENetPeer.html">ENetPeer</a> *, <a class="el" href="struct__ENetChannel.html">ENetChannel</a> *)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8b260c7d620fa30772db1426daf15ad0"></a><!-- doxytag: member="enet.h::enet_peer_dispatch_incoming_reliable_commands" ref="ga8b260c7d620fa30772db1426daf15ad0" args="(ENetPeer *, ENetChannel *)" -->
 void&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_peer_dispatch_incoming_reliable_commands</b> (<a class="el" href="struct__ENetPeer.html">ENetPeer</a> *, <a class="el" href="struct__ENetChannel.html">ENetChannel</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6170868084619c475060ca7ea0ed0a8"></a><!-- doxytag: member="enet.h::enet_range_coder_create" ref="ac6170868084619c475060ca7ea0ed0a8" args="(void)" -->
+ENET_API void *&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_range_coder_create</b> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a49ad1b144f773181769534dac97b8c5c"></a><!-- doxytag: member="enet.h::enet_range_coder_destroy" ref="a49ad1b144f773181769534dac97b8c5c" args="(void *)" -->
+ENET_API void&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_range_coder_destroy</b> (void *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a87a9da3b82c97b3714987bf63e91d2dc"></a><!-- doxytag: member="enet.h::enet_range_coder_compress" ref="a87a9da3b82c97b3714987bf63e91d2dc" args="(void *, const ENetBuffer *, size_t, size_t, enet_uint8 *, size_t)" -->
+ENET_API size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_range_coder_compress</b> (void *, const <a class="el" href="structENetBuffer.html">ENetBuffer</a> *, size_t, size_t, <a class="el" href="types_8h.html#a34ce80c65abc6389fe0121a83d757f07">enet_uint8</a> *, size_t)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8df00b374e20687f232fae29aa7859e"></a><!-- doxytag: member="enet.h::enet_range_coder_decompress" ref="ac8df00b374e20687f232fae29aa7859e" args="(void *, const enet_uint8 *, size_t, enet_uint8 *, size_t)" -->
+ENET_API size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_range_coder_decompress</b> (void *, const <a class="el" href="types_8h.html#a34ce80c65abc6389fe0121a83d757f07">enet_uint8</a> *, size_t, <a class="el" href="types_8h.html#a34ce80c65abc6389fe0121a83d757f07">enet_uint8</a> *, size_t)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea0520a5cc4fc91f40690eebbdc1ff90"></a><!-- doxytag: member="enet.h::enet_protocol_command_size" ref="aea0520a5cc4fc91f40690eebbdc1ff90" args="(enet_uint8)" -->
 size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_protocol_command_size</b> (<a class="el" href="types_8h.html#a34ce80c65abc6389fe0121a83d757f07">enet_uint8</a>)</td></tr>
 </table>
@@ -346,12 +363,12 @@ size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_protocol_comma
       </table>
 </div>
 <div class="memdoc">
-<p>No fields should be modified.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__host.html#ga929df1baa1662e1eb0ae89af9ee3b339" title="Creates a host for communicating to peers.">enet_host_create()</a> </dd>
+<p>No fields should be modified unless otherwise stated.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__host.html#ga5567a95d7a45521dc9cba93a9066c940" title="Creates a host for communicating to peers.">enet_host_create()</a> </dd>
 <dd>
 <a class="el" href="group__host.html#gacec1e9a0b528c1f9ce30544d2d5b5b79" title="Destroys the host and all resources associated with it.">enet_host_destroy()</a> </dd>
 <dd>
-<a class="el" href="group__host.html#ga04f234142512c08dd86a22b05020bd88" title="Initiates a connection to a foreign host.">enet_host_connect()</a> </dd>
+<a class="el" href="group__host.html#ga23b3ac206326b84f42fa91673f12fca9" title="Initiates a connection to a foreign host.">enet_host_connect()</a> </dd>
 <dd>
 <a class="el" href="group__host.html#ga6ba501b3ee576e5578c8e6d1694ebd49" title="Waits for events on the host specified and shuttles packets between the host and its peers...">enet_host_service()</a> </dd>
 <dd>
@@ -359,7 +376,9 @@ size_t&nbsp;</td><td class="memItemRight" valign="bottom"><b>enet_protocol_comma
 <dd>
 <a class="el" href="group__host.html#ga5190a63f78eb0c15bd96cda44bf423c6" title="Queues a packet to be sent to all peers associated with the host.">enet_host_broadcast()</a> </dd>
 <dd>
-enet_host_checksum() </dd>
+<a class="el" href="group__host.html#gae9e23efdfc718dedaa349891dddf529b" title="Sets the packet compressor the host should use to compress and decompress packets.">enet_host_compress()</a> </dd>
+<dd>
+<a class="el" href="group__host.html#ga444b74e7b70d97e2abd02328419be3f4" title="Sets the packet compressor the host should use to the default range coder.">enet_host_compress_with_range_coder()</a> </dd>
 <dd>
 <a class="el" href="group__host.html#gaa3c04d1a1a41f46a2db274f29a8d0ffd" title="Limits the maximum allowed channels of future incoming connections.">enet_host_channel_limit()</a> </dd>
 <dd>
@@ -417,7 +436,7 @@ enet_host_bandwidth_throttle() </dd></dl>
 </div>
 </div>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="a06fc87d81c62e9abb8790b6e5713c55b"></a><!-- doxytag: member="enet.h::@0" ref="a06fc87d81c62e9abb8790b6e5713c55b" args="" -->
+<a class="anchor" id="adf764cbdea00d65edcd07bb9953ad2b7"></a><!-- doxytag: member="enet.h::@1" ref="adf764cbdea00d65edcd07bb9953ad2b7" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -428,13 +447,13 @@ enet_host_bandwidth_throttle() </dd></dl>
 </div>
 <div class="memdoc">
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="a06fc87d81c62e9abb8790b6e5713c55ba3d8d24eeb6e426826e88540d7c87d036"></a><!-- doxytag: member="ENET_HOST_ANY" ref="a06fc87d81c62e9abb8790b6e5713c55ba3d8d24eeb6e426826e88540d7c87d036" args="" -->ENET_HOST_ANY</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="adf764cbdea00d65edcd07bb9953ad2b7a3d8d24eeb6e426826e88540d7c87d036"></a><!-- doxytag: member="ENET_HOST_ANY" ref="adf764cbdea00d65edcd07bb9953ad2b7a3d8d24eeb6e426826e88540d7c87d036" args="" -->ENET_HOST_ANY</em>&nbsp;</td><td>
 <p>specifies the default server host </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a06fc87d81c62e9abb8790b6e5713c55baf40f3e48e3f87859c06d62023601eb57"></a><!-- doxytag: member="ENET_HOST_BROADCAST" ref="a06fc87d81c62e9abb8790b6e5713c55baf40f3e48e3f87859c06d62023601eb57" args="" -->ENET_HOST_BROADCAST</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="adf764cbdea00d65edcd07bb9953ad2b7af40f3e48e3f87859c06d62023601eb57"></a><!-- doxytag: member="ENET_HOST_BROADCAST" ref="adf764cbdea00d65edcd07bb9953ad2b7af40f3e48e3f87859c06d62023601eb57" args="" -->ENET_HOST_BROADCAST</em>&nbsp;</td><td>
 <p>specifies a subnet-wide broadcast </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a06fc87d81c62e9abb8790b6e5713c55ba851f798e15c7f68c29a5755ac7d7cce4"></a><!-- doxytag: member="ENET_PORT_ANY" ref="a06fc87d81c62e9abb8790b6e5713c55ba851f798e15c7f68c29a5755ac7d7cce4" args="" -->ENET_PORT_ANY</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="adf764cbdea00d65edcd07bb9953ad2b7a851f798e15c7f68c29a5755ac7d7cce4"></a><!-- doxytag: member="ENET_PORT_ANY" ref="adf764cbdea00d65edcd07bb9953ad2b7a851f798e15c7f68c29a5755ac7d7cce4" args="" -->ENET_PORT_ANY</em>&nbsp;</td><td>
 <p>specifies that a port should be automatically chosen </p>
 </td></tr>
 </table>
@@ -526,7 +545,7 @@ enet_host_bandwidth_throttle() </dd></dl>
 </div>
 </div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Tue May 31 2011 03:26:31 for enet by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Feb 9 2011 21:31:05 for enet by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

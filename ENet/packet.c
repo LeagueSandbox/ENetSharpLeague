@@ -24,24 +24,24 @@ enet_packet_create (const void * data, size_t dataLength, enet_uint32 flags)
       return NULL;
 
     if (flags & ENET_PACKET_FLAG_NO_ALLOCATE)
-      packet -> data = (enet_uint8 *) data;
+      packet->data = (enet_uint8 *) data;
     else
     {
-       packet -> data = (enet_uint8 *) enet_malloc (dataLength);
-       if (packet -> data == NULL)
+       packet->data = (enet_uint8 *) enet_malloc (dataLength);
+       if (packet->data == NULL)
        {
           enet_free (packet);
           return NULL;
        }
 
        if (data != NULL)
-         memcpy (packet -> data, data, dataLength);
+         memcpy (packet->data, data, dataLength);
     }
 
-    packet -> referenceCount = 0;
-    packet -> flags = flags;
-    packet -> dataLength = dataLength;
-    packet -> freeCallback = NULL;
+    packet->referenceCount = 0;
+    packet->flags = flags;
+    packet->dataLength = dataLength;
+    packet->freeCallback = NULL;
 
     return packet;
 }
@@ -52,11 +52,11 @@ enet_packet_create (const void * data, size_t dataLength, enet_uint32 flags)
 void
 enet_packet_destroy (ENetPacket * packet)
 {
-    if (packet -> freeCallback != NULL)
-      (* packet -> freeCallback) (packet);
+    if (packet->freeCallback != NULL)
+      (* packet->freeCallback) (packet);
     
-	if (! (packet -> flags & ENET_PACKET_FLAG_NO_ALLOCATE))
-      enet_free (packet -> data);
+    if (! (packet->flags & ENET_PACKET_FLAG_NO_ALLOCATE))
+      enet_free (packet->data);
 
     enet_free (packet);
 }
@@ -72,9 +72,9 @@ enet_packet_resize (ENetPacket * packet, size_t dataLength)
 {
     enet_uint8 * newData;
    
-    if (dataLength <= packet -> dataLength || (packet -> flags & ENET_PACKET_FLAG_NO_ALLOCATE))
+    if (dataLength <= packet->dataLength || (packet->flags & ENET_PACKET_FLAG_NO_ALLOCATE))
     {
-       packet -> dataLength = dataLength;
+       packet->dataLength = dataLength;
 
        return 0;
     }
@@ -83,11 +83,11 @@ enet_packet_resize (ENetPacket * packet, size_t dataLength)
     if (newData == NULL)
       return -1;
 
-    memcpy (newData, packet -> data, packet -> dataLength);
-    enet_free (packet -> data);
+    memcpy (newData, packet->data, packet->dataLength);
+    enet_free (packet->data);
     
-    packet -> data = newData;
-    packet -> dataLength = dataLength;
+    packet->data = newData;
+    packet->dataLength = dataLength;
 
     return 0;
 }
@@ -142,8 +142,8 @@ enet_crc32 (const ENetBuffer * buffers, size_t bufferCount)
 
     while (bufferCount -- > 0)
     {
-        const enet_uint8 * data = (const enet_uint8 *) buffers -> data,
-                         * dataEnd = & data [buffers -> dataLength];
+        const enet_uint8 * data = (const enet_uint8 *) buffers->data,
+                         * dataEnd = & data [buffers->dataLength];
 
         while (data < dataEnd)
         {

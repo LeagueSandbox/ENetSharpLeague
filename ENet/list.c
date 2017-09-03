@@ -13,8 +13,8 @@
 void
 enet_list_clear (ENetList * list)
 {
-   list -> sentinel.next = & list -> sentinel;
-   list -> sentinel.previous = & list -> sentinel;
+   list->sentinel.next = & list->sentinel;
+   list->sentinel.previous = & list->sentinel;
 }
 
 ENetListIterator
@@ -22,11 +22,11 @@ enet_list_insert (ENetListIterator position, void * data)
 {
    ENetListIterator result = (ENetListIterator) data;
 
-   result -> previous = position -> previous;
-   result -> next = position;
+   result->previous = position->previous;
+   result->next = position;
 
-   result -> previous -> next = result;
-   position -> previous = result;
+   result->previous->next = result;
+   position->previous = result;
 
    return result;
 }
@@ -34,8 +34,8 @@ enet_list_insert (ENetListIterator position, void * data)
 void *
 enet_list_remove (ENetListIterator position)
 {
-   position -> previous -> next = position -> next;
-   position -> next -> previous = position -> previous;
+   position->previous->next = position->next;
+   position->next->previous = position->previous;
 
    return position;
 }
@@ -46,14 +46,14 @@ enet_list_move (ENetListIterator position, void * dataFirst, void * dataLast)
    ENetListIterator first = (ENetListIterator) dataFirst,
                     last = (ENetListIterator) dataLast;
 
-   first -> previous -> next = last -> next;
-   last -> next -> previous = first -> previous;
+   first->previous->next = last->next;
+   last->next->previous = first->previous;
 
-   first -> previous = position -> previous;
-   last -> next = position;
+   first->previous = position->previous;
+   last->next = position;
 
-   first -> previous -> next = first;
-   position -> previous = last;
+   first->previous->next = first;
+   position->previous = last;
     
    return first;
 }
