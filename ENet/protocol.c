@@ -1411,7 +1411,7 @@ enet_protocol_send_outgoing_commands (ENetHost * host, ENetEvent * event, int ch
            currentPeer -> packetsLost = 0;
         }
 
-      header.checksum = currentPeer -> sessionID;
+    //header.checksum = currentPeer -> sessionID;
 		header.peerID = currentPeer->outgoingPeerID;
 		header.flag = host->headerFlags;
         
@@ -1425,8 +1425,8 @@ enet_protocol_send_outgoing_commands (ENetHost * host, ENetEvent * event, int ch
         else
           host -> buffers -> dataLength = (size_t) & ((ENetProtocolHeader *) 0) -> sentTime;
  
-        if (host -> checksum != NULL)
-          header.checksum = host -> checksum (host -> buffers, host -> bufferCount);
+       //if (host -> checksum != NULL)
+       //   header.checksum = host -> checksum (host -> buffers, host -> bufferCount);
 
         currentPeer -> lastSendTime = host -> serviceTime;
 

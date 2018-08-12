@@ -10,7 +10,7 @@
 enum
 {
    ENET_PROTOCOL_MINIMUM_MTU             = 576,
-   ENET_PROTOCOL_MAXIMUM_MTU             = 4096,
+   ENET_PROTOCOL_MAXIMUM_MTU             = 996,
    ENET_PROTOCOL_MAXIMUM_PACKET_COMMANDS = 32,
    ENET_PROTOCOL_MINIMUM_WINDOW_SIZE     = 4096,
    ENET_PROTOCOL_MAXIMUM_WINDOW_SIZE     = 32768,
@@ -58,7 +58,6 @@ typedef enum _ENetProtocolFlag
 
 typedef struct _ENetProtocolHeader
 {
-   enet_uint32 checksum;
    enet_uint8 peerID;
    enet_uint8 flag;
    enet_uint16 sentTime;
@@ -82,7 +81,7 @@ typedef struct _ENetProtocolConnect
 {
    ENetProtocolCommandHeader header;
    enet_uint8 outgoingPeerID;
-   enet_uint8 unk;
+   enet_uint8 pad;
    enet_uint16 mtu;
    enet_uint32 windowSize;
    enet_uint32 channelCount;

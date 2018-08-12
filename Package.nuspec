@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>ENetSharpLeague</id>
-    <version>1.2.1-beta</version>
+    <id>ENetSharpLeague-4.17</id>
+    <version>1.2.1</version>
     <authors>League Sandbox, James F. Bellinger, Lee Salzman</authors>
     <owners>League Sandbox</owners>
     <licenseUrl>https://raw.githubusercontent.com/LeagueSandbox/ENetSharpLeague/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/LeagueSandbox/ENetSharpLeague</projectUrl>
     <iconUrl>http://i.imgur.com/xJ0d1t2.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>League of Legends 4.20 Compatible Version of ENet and ENetCS</description>
-    <releaseNotes>Included OS X and linux libraries</releaseNotes>
+    <description>League of Legends 4.17 Compatible Version of ENet and ENetCS</description>
+    <releaseNotes>Included Windows and linux libraries</releaseNotes>
     <copyright></copyright>
     <tags>ENet Networking UDP LeagueSandbox</tags>
     <references>
@@ -20,7 +20,6 @@
   <files>
     <file src="Release/ENetCS.dll" target="lib/net461/ENetCS.dll" />
     <file src="Release/libenet.dll" target="lib/native/libenet.dll" />
-    <file src="Release/libenet.dylib" target="lib/native/libenet.dylib" />
     <file src="Release/libenet.so" target="lib/native/libenet.so" />
   </files>
 </package>

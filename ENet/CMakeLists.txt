@@ -3,6 +3,18 @@ cmake_minimum_required(VERSION 2.6)
 project(enet)
 set(CMAKE_BUILD_TYPE Release)
 
+include(cmake/ucm.cmake)
+ucm_set_runtime(STATIC)
+
+if(MSVC)
+else()
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static")
+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -static")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -static")
+  set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -static")
+endif()
+
+
 # The "configure" step.
 include(CheckFunctionExists)
 include(CheckStructHasMember)
@@ -74,3 +86,9 @@ add_library(enet SHARED
         unix.c
         win32.c
     )
+set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
+set(THREADS_PREFER_PTHREAD_FLAG TRUE)
+find_package(Threads)
+target_link_libraries(enet Threads::Threads)
+
+
