@@ -61,7 +61,8 @@ endif()
 if(HAS_SOCKLEN_T)
     add_definitions(-DHAS_SOCKLEN_T=1)
 endif()
- 
+add_definitions(-DENET_DLL)
+add_definitions(-DENET_CHECKSUM)
 include_directories(${PROJECT_SOURCE_DIR}/include)
  
 add_library(enet SHARED

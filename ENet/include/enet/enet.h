@@ -12,7 +12,7 @@ extern "C"
 
 #include <stdlib.h>
 
-#if defined(WIN32) || defined(_WIN32)
+#ifdef WIN32
 #include "enet/win32.h"
 #else
 #include "enet/unix.h"
@@ -186,7 +186,7 @@ enum
 {
    ENET_HOST_RECEIVE_BUFFER_SIZE          = 256 * 1024,
    ENET_HOST_SEND_BUFFER_SIZE             = 256 * 1024,
-   ENET_HOST_BANDWIDTH_THROTTLE_INTERVAL  = 1000,
+   ENET_HOST_BANDWIDTH_THROTTLE_INTERVAL  = 0x0FFFFFFFF,
    ENET_HOST_DEFAULT_MTU                  = 1400,
 
    ENET_PEER_DEFAULT_ROUND_TRIP_TIME      = 500,
@@ -197,11 +197,11 @@ enum
    ENET_PEER_PACKET_THROTTLE_DECELERATION = 2,
    ENET_PEER_PACKET_THROTTLE_INTERVAL     = 5000,
    ENET_PEER_PACKET_LOSS_SCALE            = (1 << 16),
-   ENET_PEER_PACKET_LOSS_INTERVAL         = 10000,
+   ENET_PEER_PACKET_LOSS_INTERVAL         = 0x0FFFFFFFF,
    ENET_PEER_WINDOW_SIZE_SCALE            = 64 * 1024,
    ENET_PEER_TIMEOUT_LIMIT                = 32,
    ENET_PEER_TIMEOUT_MINIMUM              = 5000,
-   ENET_PEER_TIMEOUT_MAXIMUM              = 10000,
+   ENET_PEER_TIMEOUT_MAXIMUM              = 30000,
    ENET_PEER_PING_INTERVAL                = 500,
    ENET_PEER_UNSEQUENCED_WINDOWS          = 64,
    ENET_PEER_UNSEQUENCED_WINDOW_SIZE      = 1024,
@@ -232,9 +232,12 @@ typedef struct _ENetPeer
 { 
    ENetListNode  dispatchList;
    struct _ENetHost * host;
-   enet_uint8   outgoingPeerID;
-   enet_uint8   incomingPeerID;
-   enet_uint32   sessionID;
+   enet_uint8    outgoingPeerID;
+   enet_uint8    outgoingPeerID_pad;
+   enet_uint8    incomingPeerID;
+   enet_uint8    incomingPeerID_pad;
+   enet_uint8    sessionID;
+   enet_uint8    sessionID_pad[3];
    ENetAddress   address;            /**< Internet address of the peer */
    void *        data;               /**< Application private data, may be freely modified */
    ENetPeerState state;
@@ -319,7 +322,7 @@ typedef struct _ENetHost
    ENetList             dispatchQueue;
    int                  continueSending;
    size_t               packetSize;
-   enet_uint8          headerFlags;
+   enet_uint16          headerFlags;
    ENetProtocol         commands [ENET_PROTOCOL_MAXIMUM_PACKET_COMMANDS];
    size_t               commandCount;
    ENetBuffer           buffers [ENET_BUFFER_MAXIMUM];
