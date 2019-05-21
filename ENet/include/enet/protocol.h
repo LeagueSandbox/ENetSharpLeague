@@ -10,13 +10,13 @@
 enum
 {
    ENET_PROTOCOL_MINIMUM_MTU             = 576,
-   ENET_PROTOCOL_MAXIMUM_MTU             = 4096,
+   ENET_PROTOCOL_MAXIMUM_MTU             = 996,
    ENET_PROTOCOL_MAXIMUM_PACKET_COMMANDS = 32,
    ENET_PROTOCOL_MINIMUM_WINDOW_SIZE     = 4096,
    ENET_PROTOCOL_MAXIMUM_WINDOW_SIZE     = 32768,
    ENET_PROTOCOL_MINIMUM_CHANNEL_COUNT   = 1,
    ENET_PROTOCOL_MAXIMUM_CHANNEL_COUNT   = 255,
-   ENET_PROTOCOL_MAXIMUM_PEER_ID         = 0x7FFF
+   ENET_PROTOCOL_MAXIMUM_PEER_ID         = 0x7F
 };
 
 typedef enum _ENetProtocolCommand
@@ -43,8 +43,8 @@ typedef enum _ENetProtocolFlag
    ENET_PROTOCOL_COMMAND_FLAG_ACKNOWLEDGE = (1 << 7),
    ENET_PROTOCOL_COMMAND_FLAG_UNSEQUENCED = (1 << 6),
 
-   ENET_PROTOCOL_HEADER_FLAG_SENT_TIME = (1 << 15),
-   ENET_PROTOCOL_HEADER_FLAG_MASK      = 0x8000
+   ENET_PROTOCOL_HEADER_FLAG_SENT_TIME = (1 << 7),
+   ENET_PROTOCOL_HEADER_FLAG_MASK      = 0x80
 } ENetProtocolFlag;
 
 #ifdef _MSC_VER_
@@ -58,8 +58,11 @@ typedef enum _ENetProtocolFlag
 
 typedef struct _ENetProtocolHeader
 {
+#ifdef ENET_CHECKSUM
    enet_uint32 checksum;
-   enet_uint16 peerID;
+#endif
+   enet_uint8 sessionID;
+   enet_uint8 peerID;
    enet_uint16 sentTime;
 } ENET_PACKED ENetProtocolHeader;
 
@@ -80,7 +83,8 @@ typedef struct _ENetProtocolAcknowledge
 typedef struct _ENetProtocolConnect
 {
    ENetProtocolCommandHeader header;
-   enet_uint16 outgoingPeerID;
+   enet_uint8  outgoingPeerID;
+   enet_uint8  outgoingPeerID_pad;
    enet_uint16 mtu;
    enet_uint32 windowSize;
    enet_uint32 channelCount;
@@ -89,13 +93,15 @@ typedef struct _ENetProtocolConnect
    enet_uint32 packetThrottleInterval;
    enet_uint32 packetThrottleAcceleration;
    enet_uint32 packetThrottleDeceleration;
-   enet_uint32 sessionID;
+   enet_uint8  sessionID;
+   enet_uint8  sessionID_pad[3];
 } ENET_PACKED ENetProtocolConnect;
 
 typedef struct _ENetProtocolVerifyConnect
 {
    ENetProtocolCommandHeader header;
-   enet_uint16 outgoingPeerID;
+   enet_uint8  outgoingPeerID;
+   enet_uint8  outgoingPeerID_pad;
    enet_uint16 mtu;
    enet_uint32 windowSize;
    enet_uint32 channelCount;
