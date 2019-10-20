@@ -13,14 +13,26 @@
     <releaseNotes>Included OS X and linux libraries</releaseNotes>
     <copyright></copyright>
     <tags>ENet Networking UDP LeagueSandbox</tags>
-    <references>
-        <reference file="ENetCS.dll" />
-    </references>
+	<dependencies>
+      <group targetFramework="net461" />
+	  <group targetFramework="netcoreapp3.0" />
+    </dependencies>
   </metadata>
   <files>
-    <file src="Release/ENetCS.dll" target="lib/net461/ENetCS.dll" />
-    <file src="Release/libenet.dll" target="lib/native/libenet.dll" />
-    <file src="Release/libenet.dylib" target="lib/native/libenet.dylib" />
-    <file src="Release/libenet.so" target="lib/native/libenet.so" />
+    <file src="Release/x86/net461/ENetCS.dll" target="lib/net461/x86/ENetCS.dll" />
+	<file src="non-script-compiled-release/x86/libenet.dll" target="lib/native/x86/libenet.dll" />
+    <file src="non-script-compiled-release/x86/libenet.dylib" target="lib/native/x86/libenet.dylib" />
+    <file src="non-script-compiled-release/x86/libenet.so" target="lib/native/x86/libenet.so" />
+	
+	<file src="Release/x64/net461/ENetCS.dll" target="lib/net461/x64/ENetCS.dll" />
+	<file src="non-script-compiled-release/x64/libenet.dll" target="lib/native/x64/libenet.dll" />
+    <file src="non-script-compiled-release/x64/libenet.dylib" target="lib/native/x64/libenet.dylib" />
+    <file src="non-script-compiled-release/x64/libenet.so" target="lib/native/x64/libenet.so" />
+	
+	<file src="Release/netcoreapp3.0/ENetCS.dll" target="lib/netcoreapp3.0/ENetCS.dll" />
+	<file src="non-script-compiled-release/x86/libenet.dll" target="runtimes/win-x86/native" />
+	<file src="non-script-compiled-release/x64/libenet.dll" target="runtimes/win-x64/native" />	
+	<file src="non-script-compiled-release/x64/libenet.so" target="runtimes/linux-x64/native" />
+	<file src="non-script-compiled-release/x64/libenet.dylib" target="runtimes/osx-x64/native" />
   </files>
 </package>
