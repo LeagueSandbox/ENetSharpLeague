@@ -44,4 +44,7 @@
     <OutputPath>..\Release\</OutputPath>
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
 </Project>
